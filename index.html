@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK HACKER ZONE | Powered by Mr Alex ID</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+            color: #00ff00;
+            overflow: hidden;
+        }
+
+        /* Animated Glitch Effect for background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px) brightness(0.5);
+            z-index: -1;
+            animation: glitchBackground 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes glitchBackground {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-30px, -30px); }
+        }
+
+        /* Login Box Styling */
+        .login-box {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Title Glitch Effect */
+        #title {
+            font-size: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            color: #00ff00;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red, -2px -2px cyan; }
+            50% { text-shadow: 2px 2px cyan, -2px -2px red; }
+            100% { text-shadow: 2px 2px red, -2px -2px cyan; }
+        }
+
+        /* Input Styling */
+        .input-box {
+            margin: 20px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 2px solid #00ff00;
+            background-color: transparent;
+            color: #00ff00;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-bottom-color: #ff4500;
+        }
+
+        .input-box input::placeholder {
+            color: rgba(0, 255, 0, 0.6);
+        }
+
+        /* Button Styling */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #00ff00, #004d00);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(45deg, #ff4500, #ff0000);
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.8);
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-box {
+                width: 90%;
+                padding: 20px;
+            }
+
+            #title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2 id="title">DARK HACKER ZONE</h2>
+        <div class="input-box">
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button class="login-btn" onclick="validateLogin()">Login</button>
+        <div class="footer">Powered by MR-ALEX-ID | Programmer in Sri Lanka 🇱🇰</div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "alexid" && password === "alexid") {
+                window.location.href = "https://alex-id-programmer.vercel.app/";
+            } else {
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+
+</body>
+</html>
